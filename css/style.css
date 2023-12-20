@@ -1,0 +1,84 @@
+:root {
+      --onyx:#2E3532;
+      --cardinal-red:#B03043;
+      --alabaster:#E0E2DB;
+      --main-font:'Inter', sans-serif;
+      --header:'Unica One', sans-serif;
+
+    }
+    
+
+*{
+      font-family: var(--main-font);
+      scroll-behavior: smooth;
+}
+
+body{
+      background-image: url(../images/martin-martz-wRuhOOaG-Z4-unsplash.jpg);
+      background-repeat: repeat-y;
+      backdrop-filter: blur(50px);
+}
+
+@keyframes navlinks {
+      from {letter-spacing: normal;}
+      to {letter-spacing: 2px; font-weight: bold; }
+    }
+
+@keyframes hoverimg {
+      from {border-radius: 0px;}
+      to {border-radius: 50%;}
+}
+
+.nav-link.active{
+      animation: navlinks 1s ease-in-out 1;
+      animation-fill-mode:forwards;
+}
+
+.coverpage{
+      display:flex;
+      align-items: center;
+      justify-content: space-around;
+      height:100vh;
+      width:100vw;
+      background-image: url(../images/martin-martz-h4qed_IO9d0-unsplash.jpg);
+      border-radius: 0px 0px 10vw 10vw;
+      background-position: center;
+      background-size: cover;
+}
+
+.pgsect {
+      min-height: 1700px;
+      /* padding: 10vh 0 0 0; */
+}
+
+h1 {
+      padding: 10vh 0 2vh 0;
+      font-family:var(--header);
+      font-size: calc(35px + 2.5vw);
+      font-weight: bold;
+      color:var(--alabaster);
+      text-align: center;
+}
+
+#navcontainer {
+      max-width:1400px;
+      padding:2vh 2vw 0 2vw;
+      margin:auto;
+      position:sticky;
+      top:0px;
+      z-index: 1000;
+}
+
+.navbar{
+      border-radius: 12.5px;
+      padding-left:1.5%;
+      padding-right:1.5%;
+}
+
+.dropdown-menu[data-bs-popper]{
+      left:auto;
+}
+
+button.navbar-toggler{
+      margin:auto;
+}
