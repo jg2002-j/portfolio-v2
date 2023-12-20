@@ -12,24 +12,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Unica+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto+Mono&family=Unica+One&display=swap" rel="stylesheet">
   </head>
   <body data-bs-spy="scroll" data-bs-target="#home">
 
-    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="toast-header">
-        <img src="..." class="rounded me-2" alt="...">
-        <strong class="me-auto">Jai</strong>
-        <small>11 mins ago</small>
-        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
-      <div class="toast-body">
-        Thanks for visiting!
-      </div>
-    </div>
-
     <div class="coverpage">
-      <p>test</p>
+      <div id="title" class="user-select-none">JAI GANDHI</div>
     </div>
 
     <div id="navcontainer">
@@ -51,7 +39,7 @@
                   <i class="bi bi-code-square px-2"></i> Projects
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#FeaturedProject">Featured Project</a></li>
+                  <li><a class="dropdown-item" href="#projects">Featured Project</a></li>
                   <li><a class="dropdown-item disabled" href="#Project2">Upcoming</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#AllProjects">All Projects</a></li>
@@ -69,25 +57,49 @@
       </nav>
     </div>
 
-    <section class="pgsect" id="aboutme">
-      <div class="container">
-        <h1>About Me</h1>
-        <div class="row">
+    <section class="pgsect user-select-none py-3" id="aboutme">
+      <div class="row text-align-center align-items-start container" id="aboutmeflex">
+        <h1 class="col sticky-top no-wrap py-3">About Me</h1>
+        <div class="col row gx-3 gy-3">
           <div class="col-sm-6 mb-3 mb-sm-0">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a target="_blank" href="https://github.com/jg2002-j" class="btn btn-dark "><i class="bi bi-github px-2"></i> GitHub<i class="bi bi-arrow-up-right-square ps-5 pe-2"></i></a>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-6 mb-3 mb-sm-0">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a target="_blank" href="http://www.linkedin.com/in/jg2002" class="btn btn-dark"><i class="bi bi-linkedin px-2"></i> LinkedIn<i class="bi bi-arrow-up-right-square ps-5 pe-2"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 mb-6 mb-sm-0">
+            <div class="card">
+              <div class="card-body">
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur rem sit minus labore laborum distinctio accusamus doloribus, ipsum quos accusantium voluptatibus perspiciatis dignissimos odit assumenda nobis cum omnis nemo ea!
+                <br>
+                <br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda aspernatur molestias deserunt expedita maiores. Alias voluptate nobis laborum perspiciatis praesentium repellendus ipsam, quasi hic, sit in ab tenetur veritatis aperiam?
+                <br>
+                <br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam praesentium eaque repudiandae adipisci repellendus quas facere possimus vero, in laborum rerum et error quae at veritatis nostrum atque magnam aspernatur.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 mb-6 mb-sm-0">
+            <div class="card">
+              <div class="card-body">
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur rem sit minus labore laborum distinctio accusamus doloribus, ipsum quos accusantium voluptatibus perspiciatis dignissimos odit assumenda nobis cum omnis nemo ea!
+                <br>
+                <br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda aspernatur molestias deserunt expedita maiores. Alias voluptate nobis laborum perspiciatis praesentium repellendus ipsam, quasi hic, sit in ab tenetur veritatis aperiam?
+                <br>
+                <br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam praesentium eaque repudiandae adipisci repellendus quas facere possimus vero, in laborum rerum et error quae at veritatis nostrum atque magnam aspernatur.
+                </p>
               </div>
             </div>
           </div>
@@ -95,26 +107,88 @@
       </div>
     </section>
 
-    <section class="pgsect" id="projects">
+    <section class="pgsect user-select-none py-3" id="projects">
       <div class="pgsect">
-        <h1 id="FeaturedProject">Featured Project</h1>
+        <div class="row text-align-center align-items-start container" id="featuredprojflex">
+          <div class="col-md-8 col-sm-12 row gx-3 gy-3">
+
+            <div id="FeaturedProject" class="carousel slide">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#FeaturedProject" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#FeaturedProject" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#FeaturedProject" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://placehold.co/600x400" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://placehold.co/600x400" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://placehold.co/600x400" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#FeaturedProject" data-bs-slide="prev">
+                <i class="bi bi-arrow-left-circle-fill text-dark" style="font-size: calc(15px + 0.5vw);" aria-hidden="true"></i>
+                <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#FeaturedProject" data-bs-slide="next">
+                <i class="bi bi-arrow-right-circle-fill text-dark" style="font-size: calc(15px + 0.5vw);" aria-hidden="true"></i>
+                <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            <div class="d-flex flex-wrap align-items-center">
+              <img class="me-3 my-2" alt="HTML5 Static Badge" src="https://img.shields.io/badge/HTML-white?logo=html5&logoColor=%23E34F26">
+              <img class="me-3 my-2" alt="CSS3 Static Badge" src="https://img.shields.io/badge/CSS-white?logo=CSS3&logoColor=%231572B6">
+              <img class="me-3 my-2" alt="JS Static Badge" src="https://img.shields.io/badge/JavaScript-white?logo=javascript&logoColor=%23F7DF1E">
+              <img class="me-3 my-1" alt="Bootstrap Static Badge" src="https://img.shields.io/badge/Bootstrap-white?logo=bootstrap&logoColor=%237952B3">
+              <img class="me-3 my-1" alt="ReactJS Static Badge" src="https://img.shields.io/badge/React.js-white?logo=react&logoColor=%2361DAFB">
+              <img class="me-3 my-1" alt="NextJS Static Badge" src="https://img.shields.io/badge/Next.js-white?logo=next.js&logoColor=%23000000">
+              <img class="me-3 my-1" alt="jQuery Static Badge" src="https://img.shields.io/badge/jQuery-white?logo=jquery&logoColor=%230769AD">
+              <img class="me-3 my-1" alt="JSON Static Badge" src="https://img.shields.io/badge/JSON-white?logo=json&logoColor=%23000000">
+              <img class="me-3 my-1" alt="Git Static Badge" src="https://img.shields.io/badge/Git-white?logo=git&logoColor=%23F05032">
+              <img class="me-3 my-1" alt="GitHub Static Badge" src="https://img.shields.io/badge/GitHub-white?logo=github&logoColor=%23181717">
+            </div>
+
+            <div class="col-sm-12 mb-6 mb-sm-0">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur rem sit minus labore laborum distinctio accusamus doloribus, ipsum quos accusantium voluptatibus perspiciatis dignissimos odit assumenda nobis cum omnis nemo ea!
+                  <br>
+                  <br>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda aspernatur molestias deserunt expedita maiores. Alias voluptate nobis laborum perspiciatis praesentium repellendus ipsam, quasi hic, sit in ab tenetur veritatis aperiam?
+                  <br>
+                  <br>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam praesentium eaque repudiandae adipisci repellendus quas facere possimus vero, in laborum rerum et error quae at veritatis nostrum atque magnam aspernatur.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div> 
+    
+          <h1 class="col sticky-top no-wrap py-3" id="FeaturedProject">Featured Project</h1>
+    
+        </div>
       </div>
+
       <div class="pgsect">
         <h1 id="AllProjects">All Projects</h1>  
       </div>
+    
     </section>
 
-    <section class="pgsect" id="experience">
+    <section class="pgsect user-select-none py-3" id="experience">
       <h1>Experience</h1>
     </section>
 
-    <section class="pgsect" id="contactme">
+    <section class="pgsect user-select-none py-3" id="contactme">
       <h1>Contact Me</h1>
       <div class="container">
         <p>
-          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
-            Toggle width collapse
-          </button>
+          <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">Contact Details</button>
         </p>
         <div class="collapse collapse-horizontal" id="collapseWidthExample">
           <div class="card card-body" style="width: 600px;">
