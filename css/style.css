@@ -64,15 +64,49 @@ h1 {
       /* text-transform: lowercase; */
       color:var(--alabaster);
       text-align: center;
+      mix-blend-mode: difference;
 }
 
 /* -------------------------- 
 |    BOOTSTRAP OVERRIDES    |
 ---------------------------*/
 
-.nav-link.active{
+/* .nav-link.active{
       animation: navlinks 1s ease-in-out 1;
       animation-fill-mode:forwards;
+} */
+
+li.nav-item:hover::after {
+      width: 110%;
+      left: 50%;
+    }
+
+li.nav-item::after {
+      /* background: none repeat scroll 0 0 transparent; */
+      content: "";
+      display: block;
+      height: 3px;
+      border-radius:3px;
+      position: relative;
+      background: linear-gradient(to left, #3f5625, #476965 100%);
+      width: 0;
+      left: 50%;
+      bottom: 2%;
+      transform: translateX(-50%);
+      transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+      transition: width .5s ease 0s, right .5s ease 0s;
+}
+
+.navbar-nav .nav-link.active{
+      font-weight: bold;
+      background-image: linear-gradient(to left, #668544, #66948f 100%);
+      background-size: cover;
+      background-clip: text;
+      color: transparent;
+}
+
+a.nav-link.active.dropdown-toggle::after{
+      color:#668544;
 }
 
 #navcontainer {
@@ -107,6 +141,7 @@ span.badge{
 .carousel-inner{
       border-radius: 5px;
 }
+
 
 /* -------------------------- 
 |    CUSTOM CSS             |

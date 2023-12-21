@@ -21,4 +21,4 @@ a screenshot and a link to your deployed application
 - Photo by <a href="https://unsplash.com/@eugene_golovesov?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Eugene Golovesov</a> on <a href="https://unsplash.com/photos/a-close-up-of-a-green-leafy-plant-12-LhcMD2Hg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 - Photo by <a href="https://unsplash.com/@solenfeyissa?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Solen Feyissa</a> on <a href="https://unsplash.com/photos/blue-and-white-water-waves-0m_6xyoaelo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 - Photo by <a href="https://unsplash.com/@allecgomes?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Allec Gomes</a> on <a href="https://unsplash.com/photos/black-and-red-leaf-illustration-Yek0cYh0bnY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-  
+- Navlink animation: adapted from <a href="https://codepen.io/sharkcoder/pen/oNLoddx">@sharkcoder</a>
