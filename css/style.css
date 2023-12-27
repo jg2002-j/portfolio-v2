@@ -1,9 +1,10 @@
 :root {
-      --onyx:#2E3532;
+      --onyx:#2e3532;
       --cardinal-red:#B03043;
       --alabaster:#E0E2DB;
-      --main-font:'Akkurat', 'Inter', sans-serif;
+      --main-font:'Barlow', 'Akkurat', 'Inter', sans-serif;
       --header:'Unica One', sans-serif;
+      --gradient: linear-gradient(to left, #0b51b1, #a090b4 100%);
     }
     
 @font-face {
@@ -36,25 +37,43 @@
 }
 
 body {
-      background-image: url(../images/abhishek-tiwari-qcimj8DMjLE-unsplash.jpg);
-      background-repeat: no-repeat;
+      /* background-repeat: no-repeat;
       background-size: cover;
-      backdrop-filter: blur(25px);
+      backdrop-filter: blur(25px); */
       font-size: calc(20px+2vw);
 }
 
+.pgsect {
+      min-height: 70vh;
+      /* padding: 10vh 0 0 0; */
+}
+
+.container#aboutmeflex, .container#featuredprojflex, .container#allprojects, .container#experiences{
+      /* min-width:70vw; */
+      /* min-height: 1000px; */
+      margin: 10vh auto;
+}
+
+a {
+      text-decoration: none;
+}
+
+h1.modal-title{
+      font-family: 'Barlow', sans-serif;
+}
 
 /* -------------------------- 
 |    FONTS / TEXT           |
 ---------------------------*/
 
-#title {
-      font-family: 'Bantayog';
-      font-size: calc(60px + 7vw);
-      letter-spacing: 5px;
-      color: var(--alabaster);
-      mix-blend-mode: difference;
-}
+/* 
+font-family: 'Barlow', sans-serif;
+font-family: 'Inter', sans-serif;
+font-family: 'Roboto Mono', monospace;
+font-family: 'Unica One', sans-serif; 
+*/
+
+
 
 h1 {
       /* padding: 10vh 0 2vh 0; */
@@ -65,48 +84,52 @@ h1 {
       color:var(--alabaster);
       text-align: center;
       mix-blend-mode: difference;
+      transition: 1.5s ease-in-out all;
+}
+
+#aboutmeflex h1, #featuredprojflex h1, #allprojects h1, #experience h1{
+      transition: 1.5s ease-in-out all;
+      top: 12vh;
+      z-index: 900;
 }
 
 /* -------------------------- 
 |    BOOTSTRAP OVERRIDES    |
 ---------------------------*/
 
-/* .nav-link.active{
-      animation: navlinks 1s ease-in-out 1;
-      animation-fill-mode:forwards;
-} */
-
 li.nav-item:hover::after {
+      transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
       width: 110%;
       left: 50%;
     }
 
 li.nav-item::after {
-      /* background: none repeat scroll 0 0 transparent; */
       content: "";
       display: block;
       height: 3px;
       border-radius:3px;
       position: relative;
-      background: linear-gradient(to left, #3f5625, #476965 100%);
+      background: var(--gradient);
       width: 0;
       left: 50%;
       bottom: 2%;
       transform: translateX(-50%);
       transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
-      transition: width .5s ease 0s, right .5s ease 0s;
+      transition: width 1s ease 0s, right 1s ease 0s;
 }
 
 .navbar-nav .nav-link.active{
+      transition: width 1s ease 0s, right 1s ease 0s;
       font-weight: bold;
-      background-image: linear-gradient(to left, #668544, #66948f 100%);
+      background-image: linear-gradient(to left, #749cd4, #9782af 100%);
       background-size: cover;
       background-clip: text;
       color: transparent;
 }
 
 a.nav-link.active.dropdown-toggle::after{
-      color:#668544;
+      transition: width .5s ease 0s, right .5s ease 0s;
+      color:#749cd4;
 }
 
 #navcontainer {
@@ -126,6 +149,7 @@ a.nav-link.active.dropdown-toggle::after{
 
 .dropdown-menu[data-bs-popper]{
       left:auto;
+      transition: 1.5s ease-in-out all;
 }
 
 button.navbar-toggler{
@@ -142,35 +166,146 @@ span.badge{
       border-radius: 5px;
 }
 
+#FeaturedProject > div.carousel-indicators > button{
+      height: 3px;
+      border-radius: 5px;
+      background: var(--gradient);
+      border-top: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+      transition: 1.5s ease-in-out all;
+}
+
+#FeaturedProject > div.carousel-indicators > button.active{
+      width:60px;
+      transition: 0.5s ease-in-out;
+}
+
+a.dropdown-item.active, a.dropdown-item.focus, a.dropdown-item.target{
+      background: var(--gradient);
+}
 
 /* -------------------------- 
-|    CUSTOM CSS             |
+|    HERO SECTION           |
 ---------------------------*/
 
-.coverpage{
-      display:flex;
+#heronavlinks{
+      height:20%;
+      font-size: calc(10px + .5vw);
+      transition: 1s ease;
+}
+
+#heronavlinks a, #heronavlinks i.bi-house-fill{
+      color: var(--alabaster);
+      mix-blend-mode: difference;
+      transition: 1s ease;
+}
+
+#heronavlinks a:hover, #heronavlinks i.bi-house-fill:hover{
+      cursor: pointer;
+      color: #749cd4;
+      mix-blend-mode: difference;
+      transform: scale(1.5);
+      transition: 1s ease;
+}
+
+#heronavlinks a:hover::after, #heronavlinks i.bi-house-fill:hover::after{
+      transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+      width: 25%;
+      left: 50%;
+    }
+
+#heronavlinks a::after, #heronavlinks i.bi-house-fill::after{
+      content: "";
+      display: block;
+      height: 10%;
+      border-radius: 3px;
+      position: relative;
+      background: var(--gradient);
+      width: 0;
+      left: 50%;
+      bottom: -5%;
+      transform: translateX(-50%);
+      transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+      transition: width 1s ease 0s, right 1s ease 0s;
+}
+
+#herolocationsect{height:30%}
+#herotitle{height:50%}
+
+.coverpage.container-fluid{
+      /* display:flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-around;
+      justify-content: center; */
+      transition: 1.5s ease-in-out all;
       height:100vh;
       width:100%;
-      background-image: url(../images/tony-litvyak-nHMyboz2XI8-unsplash.jpg);
-      border-radius: 0px 0px 5vw 5vw;
+      padding: 0px!important;
+      /* border-radius: 0 0 5vw 5vw; */
+      background: url(../images/jigar-panchal-ME1_AXA5lAM-unsplash.jpg);
       background-position: center;
       background-size: cover;
 }
 
-.pgsect {
-      min-height: 70vh;
-      /* padding: 10vh 0 0 0; */
+#title a{
+      font-family: 'Bantayog';
+      font-size: calc(30px + 10.5vw);
+      letter-spacing: 5px;
+      height:max-content;
+      background: url(https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/f7452684690619.5d65284163b84.gif);
+      /* background: url(https://images.squarespace-cdn.com/content/v1/613141dcb492bf4783404f01/8deb4b5d-b944-4126-a71d-90cb9d39fd1c/Documentation_2SPEED.gif);  */
+      background-size: cover;
+      background-position: center;
+      background-clip: text;
+      color: transparent;
+      mix-blend-mode: difference;
+      animation: a_title linear;
+      animation-timeline: view();
+      transition: 1.5s ease-in-out all;
+      text-wrap: nowrap;
+      overflow: hidden;
 }
 
-.container#aboutmeflex, .container#featuredprojflex, .container#allprojects, .container#experiences{
-      /* min-width:70vw; */
-      /* min-height: 1000px; */
-      margin: 10vh auto;
+#title a:hover{
+      cursor: pointer;
+      color: var(--alabaster);
+      mix-blend-mode: difference;
+      transition: 1.5s ease-in-out all;
+} 
+
+
+@keyframes a_title {
+      from  {letter-spacing: 5px;}
+      to {letter-spacing: 105px; opacity: 50%;}
 }
 
-#aboutmeflex h1, #featuredprojflex h1, #allprojects h1, #experience h1{
-      top: 12vh;
-      z-index: 900;
+/* -------------------------- 
+|    PROJECT CARDS          |
+---------------------------*/
+
+
+/* -------------------------- 
+|    PARRALAX               |
+---------------------------*/
+
+.parallax {
+      position: relative;
+      z-index: 0;
+      min-height: 65vh;
+      display: grid;
+      grid-template-areas: 
+      "stack";
+}
+
+.parallax > .stack {
+      grid-area: stack;
+      animation: parallax linear;
+      animation-timeline: scroll();
+}
+
+@keyframes parallax {
+      to {
+        transform: 
+          translateY(calc(var(--parallax-speed) * 200px));
+      }
 }
