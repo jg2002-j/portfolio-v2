@@ -2,10 +2,12 @@
       --onyx:#2e3532;
       --cardinal-red:#B03043;
       --alabaster:#E0E2DB;
+      --offwhite: #cad2c1;
       --main-font:'Barlow', 'Akkurat', 'Inter', sans-serif;
       --header:'Unica One', sans-serif;
       --gradient: linear-gradient(to left, #0b51b1, #a090b4 100%);
       /* --bs-body-bg: rgb(33, 37, 41, 0.85); */
+      --bs-border-radius: 1.5rem;
     }
     
 @font-face {
@@ -45,6 +47,7 @@ body {
 
 .bgnoise{
       position: fixed;
+      z-index: -1;
       top: -50%;
       left: -50%;
       right: -50%;
@@ -74,7 +77,7 @@ body {
 
 .pgsect {
       min-height: 100vh;
-      border-radius: 5vw;
+      border-radius: var(--bs-border-radius);
       margin: 2vh 0;
       /* padding: 10vh 0 0 0; */
 }
@@ -95,10 +98,18 @@ h1.modal-title{
 
 #location{
       color: var(--alabaster);
-      font-weight: 600;
       letter-spacing: 2px;
       mix-blend-mode: difference;
 }
+
+#covpagecreds{
+      opacity: 1;
+      color: var(--alabaster);
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      mix-blend-mode: difference;
+}
+
 
 /* -------------------------- 
 |    FONTS / TEXT           |
@@ -200,7 +211,7 @@ a.nav-link.active.dropdown-toggle::after{
 }
 
 .navbar{
-      border-radius: 12.5px;
+      border-radius: var(--bs-border-radius);
 }
 
 .dropdown-menu[data-bs-popper]{
@@ -219,12 +230,12 @@ span.badge{
 }
 
 .carousel-inner{
-      border-radius: 5px;
+      border-radius: var(--bs-border-radius);
 }
 
 h1 > div.carousel-indicators > button{
       height: 3px;
-      border-radius: 5px;
+      border-radius: var(--bs-border-radius);
       background: var(--gradient);
       border-top: 1px solid transparent;
       border-bottom: 1px solid transparent;
@@ -251,22 +262,22 @@ a.dropdown-item.active, a.dropdown-item.focus, a.dropdown-item.target{
 }
 
 #heronavlinks a, #heronavlinks i.bi-house-fill{
-      color: var(--alabaster);
-      mix-blend-mode: difference;
-      transition: 1s ease;
+      color: var(--offwhite);
+      /* mix-blend-mode: difference; */
+      transition: 0.75s ease;
 }
 
 #heronavlinks a:hover, #heronavlinks i.bi-house-fill:hover{
       cursor: pointer;
       color: #749cd4;
-      mix-blend-mode: difference;
+      /* mix-blend-mode: difference; */
       transform: scale(1.5);
-      transition: 1s ease;
+      transition: 0.75s ease;
 }
 
 #heronavlinks a:hover::after, #heronavlinks i.bi-house-fill:hover::after{
       transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
-      width: 25%;
+      width: 70%;
       left: 50%;
     }
 
@@ -289,19 +300,17 @@ a.dropdown-item.active, a.dropdown-item.focus, a.dropdown-item.target{
 #herotitle{height:50%}
 
 .herobg{
-      /* background-image: linear-gradient(to bottom, transparent, rgb(33, 37, 41, 0.85)), url("../images/xebelion-15.jpg");       */
-      background-position: center;
-      background-size: cover; 
+      position: absolute;
+      z-index: -100;
+      top: 0%;
+      mask-image: linear-gradient(to bottom, black 75%, rgba(0,0,0,0.5) 90%,transparent 100%);
       height: 120vh;
+      min-width: 100vw;
 }
 
 .coverpage.container-fluid{
-      /* display:flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center; */
       transition: 1.5s ease-in-out all;
-      min-height:100vh;
+      min-height: 100vh;
       border-radius: 0;
 }
 
@@ -327,16 +336,16 @@ a.dropdown-item.active, a.dropdown-item.focus, a.dropdown-item.target{
       font-size: calc(30px + 10.5vw);
       letter-spacing: 15px;
       mix-blend-mode: difference;
+      transition: 1.5s ease-in-out all;
 }
 
 #title a:hover{
       cursor: pointer;
+      color: transparent;
       background: url(https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/f7452684690619.5d65284163b84.gif);
       background-size: cover;
       background-position: center;
       background-clip: text;
-      color: transparent;
-      mix-blend-mode: difference;
       transition: 1.5s ease-in-out all;
 } 
 
@@ -345,14 +354,8 @@ a.dropdown-item.active, a.dropdown-item.focus, a.dropdown-item.target{
       to {letter-spacing: 50px; opacity: 0; font-size: calc(30pxpx + 15.5vw);}
 }
 
-.graphicbox{
-      height: 30vh;
-      width: 10vw;
-}
-
-svg.logo{
-      fill: white;
-      position: absolute;
+.row.h12{
+      min-height: 12.5vh;
 }
 
 /* -------------------------- 
@@ -363,10 +366,10 @@ svg.logo{
       background: url(../images/dddepth-230.jpg);
       background-position: center;
       background-size: cover;
-      min-height:50vh;
+      min-height: 50vh;
       max-width: 90vw;
       margin:auto;
-      border: var(--onyx) solid 1px;
+      border: var(--onyx) solid var(--bs-border-width);
 }
 
 @keyframes fadein {
@@ -398,7 +401,7 @@ svg.logo{
       background: url(../images/codioful-formerly-gradienta-t-Rt42Wl1RQ-unsplash.jpg);
       background-size: cover;
       background-repeat: no-repeat;
-      border-radius: 20px;
+      border-radius: var(--bs-border-radius);
 }
 
 #allprojects {min-height: 75vh;}
