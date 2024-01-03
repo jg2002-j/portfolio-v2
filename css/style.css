@@ -2,9 +2,12 @@
       --onyx:#2e3532;
       --cardinal-red:#B03043;
       --alabaster:#E0E2DB;
+      --offwhite: #cad2c1;
       --main-font:'Barlow', 'Akkurat', 'Inter', sans-serif;
       --header:'Unica One', sans-serif;
       --gradient: linear-gradient(to left, #0b51b1, #a090b4 100%);
+      /* --bs-body-bg: rgb(33, 37, 41, 0.85); */
+      --bs-border-radius: 1rem;
     }
     
 @font-face {
@@ -34,24 +37,54 @@
 *{
       font-family: var(--main-font);
       scroll-behavior: smooth;
+      /* border: 0.5px rgba(255, 0, 0, 0.2) solid; */
 }
 
 body {
-      /* background-repeat: no-repeat;
-      background-size: cover;
-      backdrop-filter: blur(25px); */
       font-size: calc(20px+2vw);
+      background-color: rgb(24, 28, 32);
 }
+
+.bgnoise{
+      position: fixed;
+      z-index: -1;
+      top: -50%;
+      left: -50%;
+      right: -50%;
+      bottom: -50%;
+      width: 200%;
+      height: 200vh;
+      background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+      background-repeat: repeat;
+      animation: bg-animation .5s infinite;
+      opacity: .65;
+      visibility: visible;
+}
+
+@keyframes bg-animation {
+      0% { transform: translate(0,0) }
+      10% { transform: translate(-5%,-5%) }
+      20% { transform: translate(-10%,5%) }
+      30% { transform: translate(5%,-10%) }
+      40% { transform: translate(-5%,15%) }
+      50% { transform: translate(-10%,5%) }
+      60% { transform: translate(15%,0) }
+      70% { transform: translate(0,10%) }
+      80% { transform: translate(-15%,0) }
+      90% { transform: translate(10%,5%) }
+      100% { transform: translate(5%,0) }
+  }
 
 .pgsect {
-      min-height: 70vh;
-      /* padding: 10vh 0 0 0; */
+      min-height: 100vh;
+      border-radius: var(--bs-border-radius);
+      margin: 2vh 0;
+      overflow-x: hidden;
 }
 
-.container#aboutmeflex, .container#featuredprojflex, .container#allprojects, .container#experiences{
-      /* min-width:70vw; */
-      /* min-height: 1000px; */
-      margin: 10vh auto;
+#abme, #featuredproj, #allprojects, #experience{
+      /* margin: 10vh auto; */
+      padding: 10vh 0;
 }
 
 a {
@@ -62,6 +95,21 @@ h1.modal-title{
       font-family: 'Barlow', sans-serif;
 }
 
+#location{
+      color: var(--alabaster);
+      letter-spacing: 2px;
+      mix-blend-mode: difference;
+}
+
+#covpagecreds{
+      opacity: 1;
+      color: var(--alabaster);
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      mix-blend-mode: difference;
+}
+
+
 /* -------------------------- 
 |    FONTS / TEXT           |
 ---------------------------*/
@@ -69,25 +117,45 @@ h1.modal-title{
 /* 
 font-family: 'Barlow', sans-serif;
 font-family: 'Inter', sans-serif;
+font-family: 'Manrope', sans-serif;
 font-family: 'Roboto Mono', monospace;
-font-family: 'Unica One', sans-serif; 
+font-family: 'Schibsted Grotesk', sans-serif;
+font-family: 'Unica One', sans-serif;
 */
 
-
-
 h1 {
-      /* padding: 10vh 0 2vh 0; */
       font-family:var(--header);
       font-size: calc(35px + 2.5vw);
+      letter-spacing: 5px;
       font-weight: bolder;
-      /* text-transform: lowercase; */
       color:var(--alabaster);
       text-align: center;
       mix-blend-mode: difference;
       transition: 1.5s ease-in-out all;
 }
 
-#aboutmeflex h1, #featuredprojflex h1, #allprojects h1, #experience h1{
+.pgsect h1{
+      line-height: 1.2em;
+      color: transparent;      
+      text-shadow: 
+        0 0 rgba(0,0,0,0), 
+        0 1.2em rgba(0,0,0,0);
+      overflow: hidden;
+      animation: textappearup forwards;
+      transition: 5s ease;
+      view-timeline: --subjectReveal block;
+      view-timeline-inset: 60% -1px;
+      animation-timeline: --subjectReveal;
+}
+
+@keyframes textappearup{
+      to {text-shadow: 
+        0 -1.2em rgba(0,0,0,0), 
+        0 0 var(--alabaster);
+      } 
+}
+
+#abme h1, #featuredproj h1, #allprojects h1, #experience h1{
       transition: 1.5s ease-in-out all;
       top: 12vh;
       z-index: 900;
@@ -134,7 +202,7 @@ a.nav-link.active.dropdown-toggle::after{
 
 #navcontainer {
       max-width:1400px;
-      padding:2vh 2vw 0 2vw;
+      padding:2vh 2vw;
       margin:auto;
       position:sticky;
       top:0px;
@@ -142,9 +210,7 @@ a.nav-link.active.dropdown-toggle::after{
 }
 
 .navbar{
-      border-radius: 12.5px;
-      padding-left:1.5%;
-      padding-right:1.5%;
+      border-radius: var(--bs-border-radius);
 }
 
 .dropdown-menu[data-bs-popper]{
@@ -163,19 +229,19 @@ span.badge{
 }
 
 .carousel-inner{
-      border-radius: 5px;
+      border-radius: var(--bs-border-radius);
 }
 
-#FeaturedProject > div.carousel-indicators > button{
+h1 > div.carousel-indicators > button{
       height: 3px;
-      border-radius: 5px;
+      border-radius: var(--bs-border-radius);
       background: var(--gradient);
       border-top: 1px solid transparent;
       border-bottom: 1px solid transparent;
       transition: 1.5s ease-in-out all;
 }
 
-#FeaturedProject > div.carousel-indicators > button.active{
+h1 > div.carousel-indicators > button.active{
       width:60px;
       transition: 0.5s ease-in-out;
 }
@@ -190,27 +256,27 @@ a.dropdown-item.active, a.dropdown-item.focus, a.dropdown-item.target{
 
 #heronavlinks{
       height:20%;
-      font-size: calc(10px + .5vw);
+      font-size: calc(15px + .5vw);
       transition: 1s ease;
 }
 
 #heronavlinks a, #heronavlinks i.bi-house-fill{
-      color: var(--alabaster);
-      mix-blend-mode: difference;
-      transition: 1s ease;
+      color: var(--offwhite);
+      /* mix-blend-mode: difference; */
+      transition: 0.75s ease;
 }
 
 #heronavlinks a:hover, #heronavlinks i.bi-house-fill:hover{
       cursor: pointer;
       color: #749cd4;
-      mix-blend-mode: difference;
+      /* mix-blend-mode: difference; */
       transform: scale(1.5);
-      transition: 1s ease;
+      transition: 0.75s ease;
 }
 
 #heronavlinks a:hover::after, #heronavlinks i.bi-house-fill:hover::after{
       transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
-      width: 25%;
+      width: 70%;
       left: 50%;
     }
 
@@ -232,55 +298,169 @@ a.dropdown-item.active, a.dropdown-item.focus, a.dropdown-item.target{
 #herolocationsect{height:30%}
 #herotitle{height:50%}
 
+#herosection img{
+      width: 100%;
+      height: 125%;
+      position: absolute;
+      top: -10%;
+      object-fit: cover;
+      object-position: center;
+      mask-image: linear-gradient(to bottom, black 75%, rgba(0,0,0,0.5) 90%,transparent 100%);
+      z-index: -5;
+}
+
 .coverpage.container-fluid{
-      /* display:flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center; */
       transition: 1.5s ease-in-out all;
-      height:100vh;
-      width:100%;
-      padding: 0px!important;
-      /* border-radius: 0 0 5vw 5vw; */
-      background: url(../images/jigar-panchal-ME1_AXA5lAM-unsplash.jpg);
-      background-position: center;
-      background-size: cover;
+      min-height: 100vh;
+      border-radius: 0;
 }
 
 #title a{
-      font-family: 'Bantayog';
+      font-family: 'Manrope';
+      color: var(--alabaster);
+      font-weight: 600;
       font-size: calc(30px + 10.5vw);
-      letter-spacing: 5px;
-      height:max-content;
-      background: url(https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/f7452684690619.5d65284163b84.gif);
-      /* background: url(https://images.squarespace-cdn.com/content/v1/613141dcb492bf4783404f01/8deb4b5d-b944-4126-a71d-90cb9d39fd1c/Documentation_2SPEED.gif);  */
-      background-size: cover;
-      background-position: center;
-      background-clip: text;
-      color: transparent;
+      letter-spacing: 15px;
       mix-blend-mode: difference;
-      animation: a_title linear;
+      animation: a_title linear forwards;
       animation-timeline: view();
+      animation-range: exit -100px;
       transition: 1.5s ease-in-out all;
       text-wrap: nowrap;
       overflow: hidden;
 }
 
+#title{
+      font-family: 'Manrope';
+      color: var(--alabaster);
+      font-weight: 600;
+      font-size: calc(30px + 10.5vw);
+      letter-spacing: 15px;
+      mix-blend-mode: difference;
+      transition: 1.5s ease-in-out all;
+}
+
 #title a:hover{
       cursor: pointer;
-      color: var(--alabaster);
-      mix-blend-mode: difference;
+      color: transparent;
+      background: url(https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/f7452684690619.5d65284163b84.gif);
+      background-size: cover;
+      background-position: center;
+      background-clip: text;
       transition: 1.5s ease-in-out all;
 } 
 
 
 @keyframes a_title {
-      from  {letter-spacing: 5px;}
-      to {letter-spacing: 105px; opacity: 50%;}
+      to {letter-spacing: 50px; opacity: 0; font-size: calc(30pxpx + 15.5vw);}
+}
+
+.row.h12{
+      min-height: 14vh;
+}
+
+.row.h24{
+      min-height: 40vh;
 }
 
 /* -------------------------- 
-|    PROJECT CARDS          |
+|    ABOUT ME               |
+---------------------------*/
+
+#aboutme{
+      min-height: 50vh;
+      max-width: 90vw;
+      margin: auto;
+      /* border: var(--onyx) solid var(--bs-border-width); */
+}
+
+@keyframes fadein {
+      from {scale: 0.8; opacity: 0;}
+      to {scale: 1; opacity: 1;}
+}
+    
+#aboutme .card{
+      opacity: 0%;
+      animation: fadein linear forwards;
+      animation-timeline: view(15%);
+      animation-range: entry;
+      transition: 1.5s ease-in-out all;
+}
+
+/* -------------------------- 
+|    PROJECTS               |
+---------------------------*/
+
+.pgsect#projects{
+      /* background: url(../images/jigar-panchal-ME1_AXA5lAM-unsplash.jpg); */
+      background-position: center;
+      background-size: cover;
+}
+
+#featuredproj {min-height: 75vh;}
+
+#ftprjwrapper{
+      background: url(../images/codioful-formerly-gradienta-t-Rt42Wl1RQ-unsplash.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: var(--bs-border-radius);
+}
+
+#allprojects {min-height: 75vh;}
+
+#featuredproj .card{
+      opacity: 0%;
+      animation: fadein linear forwards;
+      animation-timeline: view(15%);
+      animation-range: entry;
+      transition: 1.5s ease-in-out all;
+}
+
+#allprojects{
+      mask: linear-gradient(90deg, transparent, white 30%, white 70%, transparent);
+}
+
+#allproj1 .card{
+      animation: screen linear forwards;
+      animation-timeline: view();
+}
+
+#allproj2 .card{
+      animation: screen linear forwards;
+      animation-timeline: view();
+      animation-direction: reverse;
+}
+
+#allproj3 .card{
+      animation: screen linear forwards;
+      animation-timeline: view();
+}
+
+.c1{--speed: 1;}
+.c2{--speed: 2;}
+.c3{--speed: 3;}
+.c4{--speed: 4;}
+
+@keyframes screen{
+      from {transform: translate(calc(var(--speed)*-7vh));}
+      to {transform: translate(calc(var(--speed)*7vh));}
+}
+
+/* -------------------------- 
+|    EXPERIENCE             |
+---------------------------*/
+
+#experience .test{
+      width: 100%;
+      height: 20vh;
+      background-color: rgb(62, 47, 49);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+/* -------------------------- 
+|    CONTACT ME             |
 ---------------------------*/
 
 
