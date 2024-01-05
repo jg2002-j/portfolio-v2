@@ -126,7 +126,7 @@
     <div class="maincontent">
       <!-- navbar -->
       <div id="navcontainer">
-        <nav id="navbar" class="navbar sticky-top bg-dark navbar-expand-xxl bg-body-tertiary px-2" data-bs-theme="dark">
+        <nav id="navbar" class="navbar sticky-top bg-dark navbar-expand-xl bg-body-tertiary px-2" data-bs-theme="dark">
           <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -187,8 +187,6 @@
             </div>
           </div>
           <div class="border-bottom col-8 my-4 mx-auto"></div>
-
-
           <div class="row gap-5 my-4 px-5 justify-content-center">
             <div class="card col-8 col-xl-4 col-xxl-2 my-3 py-2">
               <div class="card-body">
@@ -225,70 +223,98 @@
               </div>
             </div>
           </div>
-          <div class="border-bottom col-8 my-4 mx-auto"></div>
-
+          <div class="border-bottom col-8 mx-auto"></div>
           
 
       </section>
       <!-- projects section -->
       <section class="pgsect user-select-none" id="projects">
         <!--featured project section-->
-        <div class="container" id="ftprjwrapper">
-          <div class="container d-flex flex-column align-items-center justify-content-around col-sm-12 col-lg-10" id="featuredproj">
-            <h1 class="col-sm-12 mb-6 mb-sm-0 justify-content-center text-align-center" >Featured Project</h1>
-            <div class="row d-flex justify-content-between flex-nowrap" id="ftprojscroll">
-              <div class="card flex-shrink-1 m-2 p-1 text-center">
-                <img src="./images/Screenshot_1.png" class="card-img-top rounded" alt="Screenshot of cover page">
-                <div class="card-body p-1">
-                  <a href="#" class="btn btn-small btn-dark" data-bs-toggle="modal" data-bs-target="#img1"><i class="bi bi-arrows-angle-expand"></i></a>
+        <div class="container-fluid" id="featuredproj">
+
+          <div class="row mw-100 mx-auto py-5 rounded align-items-center" id="ftprjwrapper">
+          
+            <div class="d-none d-xxl-block col-xxl-1"></div>
+
+            <div class="col-12 col-xxl-3">
+                <h1 class="text-align-center">Featured Project</h1>
+                <div class="border-bottom col-12 col-lg-8 my-4 mx-auto"></div>
+            </div>
+
+            <div class="d-none d-xxl-block col-xxl-2"></div>
+            
+            <div class="col-12 col-xxl-5">
+              <div class="row align-items-center">
+                <div class="col-sm-12 col-md-6">
+                  <div class="card mb-3">
+                    <div class="row align-items-center g-0">
+                      <div class="col-10">
+                        <img src="./images/Screenshot_1.png" class="img-fluid rounded-start" alt="Screenshot of cover page">
+                      </div>
+                      <div class="col-2">
+                        <div class="card-body text-center">
+                          <a href="#" class="btn btn-small btn-secondary" data-bs-toggle="modal" data-bs-target="#img1"><i class="bi bi-arrows-angle-expand"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card mb-3">
+                    <div class="row align-items-center g-0">
+                      <div class="col-10">
+                        <img src="./images/Screenshot_2.png" class="img-fluid rounded-start" alt="Screenshot of projects page">
+                      </div>
+                      <div class="col-2">
+                        <div class="card-body text-center">
+                          <a href="#" class="btn btn-small btn-secondary" data-bs-toggle="modal" data-bs-target="#img1"><i class="bi bi-arrows-angle-expand"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card mb-3">
+                    <div class="row align-items-center g-0">
+                      <div class="col-10">
+                        <img src="./images/Screenshot_3.png" class="img-fluid rounded-start" alt="Screenshots of experience page">
+                      </div>
+                      <div class="col-2">
+                        <div class="card-body text-center">
+                          <a href="#" class="btn btn-small btn-secondary" data-bs-toggle="modal" data-bs-target="#img1"><i class="bi bi-arrows-angle-expand"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="card flex-shrink-1 m-2 p-1 text-center">
-                <img src="./images/Screenshot_2.png" class="card-img-top rounded" alt="Screenshot of projects page">
-                <div class="card-body p-1">
-                  <a href="#" class="btn btn-small btn-dark" data-bs-toggle="modal" data-bs-target="#img2"><i class="bi bi-arrows-angle-expand"></i></a>
-                </div>
-              </div>
-              <div class="card flex-shrink-1 m-2 p-1 text-center">
-                <img src="./images/Screenshot_3.png" class="card-img-top rounded" alt="Screenshots of experience page">
-                <div class="card-body p-1">
-                  <a href="#" class="btn btn-small btn-dark" data-bs-toggle="modal" data-bs-target="#img3"><i class="bi bi-arrows-angle-expand"></i></a>
+                <div class="col-sm-12 col-md-6">
+                  <div class="row no-wrap justify-content-center">
+                  <h3 class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, vero, nulla voluptates totam rerum sint in doloremque saepe et minus ipsum optio reiciendis distinctio? Amet architecto sapiente eum quod optio.</h3>
+                  <div class="d-flex flex-wrap justify-content-center align-items-center my-3">
+                    <img class="m-1" alt="HTML5 Static Badge" src="https://img.shields.io/badge/HTML-white?logo=html5&logoColor=%23E34F26">
+                    <img class="m-1" alt="CSS3 Static Badge" src="https://img.shields.io/badge/CSS-white?logo=CSS3&logoColor=%231572B6">
+                    <!-- <img class="m-1" alt="JS Static Badge" src="https://img.shields.io/badge/JavaScript-white?logo=javascript&logoColor=%23F7DF1E"> -->
+                    <!-- <img class="m-1" alt="Bootstrap Static Badge" src="https://img.shields.io/badge/Bootstrap-white?logo=bootstrap&logoColor=%237952B3"> -->
+                    <!-- <img class="m-1" alt="ReactJS Static Badge" src="https://img.shields.io/badge/React.js-white?logo=react&logoColor=%2361DAFB"> -->
+                    <!-- <img class="m-1" alt="NextJS Static Badge" src="https://img.shields.io/badge/Next.js-white?logo=next.js&logoColor=%23000000"> -->
+                    <!-- <img class="m-1" alt="jQuery Static Badge" src="https://img.shields.io/badge/jQuery-white?logo=jquery&logoColor=%230769AD"> -->
+                    <!-- <img class="m-1" alt="JSON Static Badge" src="https://img.shields.io/badge/JSON-white?logo=json&logoColor=%23000000"> -->
+                    <img class="m-1" alt="Git Static Badge" src="https://img.shields.io/badge/Git-white?logo=git&logoColor=%23F05032">
+                    <img class="m-1" alt="GitHub Static Badge" src="https://img.shields.io/badge/GitHub-white?logo=github&logoColor=%23181717">
+                  </div>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat possimus iure velit obcaecati, magnam rem numquam labore voluptatibus fugiat nostrum ratione quam amet voluptas quia unde sapiente cupiditate vero eos.</p>
+                </div>         
                 </div>
               </div>
             </div>
-            <div class="row no-wrap justify-content-center">
-              <div class="col-sm-12 mb-6 mb-sm-0 m-2 d-flex flex-wrap justify-content-center align-items-center m-3">
-                <img class="m-1" alt="HTML5 Static Badge" src="https://img.shields.io/badge/HTML-white?logo=html5&logoColor=%23E34F26">
-                <img class="m-1" alt="CSS3 Static Badge" src="https://img.shields.io/badge/CSS-white?logo=CSS3&logoColor=%231572B6">
-                <!-- <img class="m-1" alt="JS Static Badge" src="https://img.shields.io/badge/JavaScript-white?logo=javascript&logoColor=%23F7DF1E"> -->
-                <!-- <img class="m-1" alt="Bootstrap Static Badge" src="https://img.shields.io/badge/Bootstrap-white?logo=bootstrap&logoColor=%237952B3"> -->
-                <!-- <img class="m-1" alt="ReactJS Static Badge" src="https://img.shields.io/badge/React.js-white?logo=react&logoColor=%2361DAFB"> -->
-                <!-- <img class="m-1" alt="NextJS Static Badge" src="https://img.shields.io/badge/Next.js-white?logo=next.js&logoColor=%23000000"> -->
-                <!-- <img class="m-1" alt="jQuery Static Badge" src="https://img.shields.io/badge/jQuery-white?logo=jquery&logoColor=%230769AD"> -->
-                <!-- <img class="m-1" alt="JSON Static Badge" src="https://img.shields.io/badge/JSON-white?logo=json&logoColor=%23000000"> -->
-                <img class="m-1" alt="Git Static Badge" src="https://img.shields.io/badge/Git-white?logo=git&logoColor=%23F05032">
-                <img class="m-1" alt="GitHub Static Badge" src="https://img.shields.io/badge/GitHub-white?logo=github&logoColor=%23181717">
-              </div>              
-            </div>
-            <div class="row p-2 no-wrap justify-content-center">
-              <div class="card m-2 p-1">
-                <div class="card-body">
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur rem sit minus labore laborum distinctio accusamus doloribus, ipsum quos accusantium voluptatibus perspiciatis dignissimos odit assumenda nobis cum omnis nemo ea!
-                  <br>
-                  <br>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda aspernatur molestias deserunt expedita maiores. Alias voluptate nobis laborum perspiciatis praesentium repellendus ipsam, quasi hic, sit in ab tenetur veritatis aperiam?
-                  <br>
-                  <br>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam praesentium eaque repudiandae adipisci repellendus quas facere possimus vero, in laborum rerum et error quae at veritatis nostrum atque magnam aspernatur.
-                  </p>
-                </div>
-              </div>
-            </div>
+          
+            <div class="d-none d-xxl-block col-xxl-1"></div>
+
           </div>
+
         </div>
-        <!--all projects section-->
+        
+          <!--all projects section-->
         <div class="container-fluid text-center" id="allprojects">
-          <h1 class="col-sm-12 mb-6 mb-sm-0 justify-content-center text-align-center" >All PROJECTS</h1>
+          <h1 class="col-sm-12 mb-6 mb-sm-0 justify-content-center text-align-center" >All Projects</h1>
+          <div class="border-bottom col-sm-12 col-lg-8 my-4 mx-auto"></div>
+
           <div class="container text-center">
             
             <div class="row align-items-center" id="allproj1">
