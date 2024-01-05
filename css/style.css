@@ -8,6 +8,7 @@
       --gradient: linear-gradient(to left, #0b51b1, #a090b4 100%);
       /* --bs-body-bg: rgb(33, 37, 41, 0.85); */
       --bs-border-radius: 1rem;
+      --bounceani: 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55) all
     }
     
 @font-face {
@@ -20,10 +21,15 @@
       src: url(../fonts/Bantayog-Regular.otf);
 }
 
+@font-face {
+      font-family: Akira;
+      src: url(../fonts/Akira.otf);
+}
+
 @keyframes navlinks {
       from {letter-spacing: normal;}
       to {letter-spacing: 2px; }
-    }
+}
 
 @keyframes hoverimg {
       from {border-radius: 0px;}
@@ -57,7 +63,7 @@ body {
       background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
       background-repeat: repeat;
       animation: bg-animation .5s infinite;
-      opacity: .65;
+      opacity: 0.4;
       visibility: visible;
 }
 
@@ -79,7 +85,8 @@ body {
       min-height: 100vh;
       border-radius: var(--bs-border-radius);
       margin: 2vh 0;
-      overflow-x: hidden;
+      /* overflow-x: hidden; */
+      /* THIS LINE BREAKS ANIMATIONS IDK WHY */
 }
 
 #abme, #featuredproj, #allprojects, #experience{
@@ -93,6 +100,7 @@ a {
 
 h1.modal-title{
       font-family: 'Barlow', sans-serif;
+      letter-spacing: normal;
 }
 
 #location{
@@ -121,6 +129,9 @@ font-family: 'Manrope', sans-serif;
 font-family: 'Roboto Mono', monospace;
 font-family: 'Schibsted Grotesk', sans-serif;
 font-family: 'Unica One', sans-serif;
+font-family: 'Akira';
+font-family: 'Akkurat';
+font-family: 'Bantayog';
 */
 
 h1 {
@@ -165,11 +176,25 @@ h1 {
 |    BOOTSTRAP OVERRIDES    |
 ---------------------------*/
 
+.card{
+      opacity: 0%;
+      animation: fadein linear forwards;
+      animation-timeline: view(15%);
+      animation-range: entry;
+      transition: .5s ease-in-out all;
+      border-color: rgba(0,0,0,0);
+      background-color: rgba(0,0,0,0);
+}
+.card:hover {
+      background-color:  var(--bs-body-bg);
+      box-shadow: 0px 0px 0px 2.5px rgba(59, 65, 82, 0.849);
+}
+
 li.nav-item:hover::after {
-      transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+      transition: var(--bounceani);
       width: 110%;
       left: 50%;
-    }
+}
 
 li.nav-item::after {
       content: "";
@@ -182,7 +207,7 @@ li.nav-item::after {
       left: 50%;
       bottom: 2%;
       transform: translateX(-50%);
-      transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+      transition: var(--bounceani);
       transition: width 1s ease 0s, right 1s ease 0s;
 }
 
@@ -275,10 +300,10 @@ a.dropdown-item.active, a.dropdown-item.focus, a.dropdown-item.target{
 }
 
 #heronavlinks a:hover::after, #heronavlinks i.bi-house-fill:hover::after{
-      transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+      transition: var(--bounceani);
       width: 70%;
       left: 50%;
-    }
+}
 
 #heronavlinks a::after, #heronavlinks i.bi-house-fill::after{
       content: "";
@@ -291,7 +316,7 @@ a.dropdown-item.active, a.dropdown-item.focus, a.dropdown-item.target{
       left: 50%;
       bottom: -5%;
       transform: translateX(-50%);
-      transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+      transition: var(--bounceani);
       transition: width 1s ease 0s, right 1s ease 0s;
 }
 
@@ -316,28 +341,18 @@ a.dropdown-item.active, a.dropdown-item.focus, a.dropdown-item.target{
 }
 
 #title a{
-      font-family: 'Manrope';
+      font-family: 'Akira';
       color: var(--alabaster);
       font-weight: 600;
-      font-size: calc(30px + 10.5vw);
+      font-size: calc(30px + 7.5vw);
       letter-spacing: 15px;
       mix-blend-mode: difference;
       animation: a_title linear forwards;
       animation-timeline: view();
-      animation-range: exit -100px;
+      animation-range: exit -300px;
       transition: 1.5s ease-in-out all;
       text-wrap: nowrap;
       overflow: hidden;
-}
-
-#title{
-      font-family: 'Manrope';
-      color: var(--alabaster);
-      font-weight: 600;
-      font-size: calc(30px + 10.5vw);
-      letter-spacing: 15px;
-      mix-blend-mode: difference;
-      transition: 1.5s ease-in-out all;
 }
 
 #title a:hover{
@@ -384,8 +399,38 @@ a.dropdown-item.active, a.dropdown-item.focus, a.dropdown-item.target{
       animation: fadein linear forwards;
       animation-timeline: view(15%);
       animation-range: entry;
-      transition: 1.5s ease-in-out all;
+      transition: .5s ease-in-out all;
+
+      border-color: rgba(0,0,0,0);
+      background-color: rgba(0,0,0,0);
 }
+
+#aboutme .card:hover {
+      background-color:  var(--bs-body-bg);
+      box-shadow: 0px 0px 0px 2.5px rgba(59, 65, 82, 0.849);
+}
+
+#skillbadge{transition: .5s ease-out all;}
+#skillbadge:hover{
+      transform: scale(1.5);
+}
+
+h2.ctitlew{font-size: 32px;}
+h2.ctitlew:hover span{
+      font-size: 32px;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      transition: 2s ease all;
+      animation: bounce 1.25s ease infinite;
+      animation-delay: calc(0.1s*var(--d));
+}
+
+@keyframes bounce{
+      0% {transform: translateY(0px);}
+      20%{transform: translateY(-5px);}
+      60%,100%{transform: translateY(0px);} 
+}   
 
 /* -------------------------- 
 |    PROJECTS               |
@@ -400,7 +445,7 @@ a.dropdown-item.active, a.dropdown-item.focus, a.dropdown-item.target{
 #featuredproj {min-height: 75vh;}
 
 #ftprjwrapper{
-      background: url(../images/codioful-formerly-gradienta-t-Rt42Wl1RQ-unsplash.jpg);
+      /* background: url(../images/codioful-formerly-gradienta-t-Rt42Wl1RQ-unsplash.jpg); */
       background-size: cover;
       background-repeat: no-repeat;
       border-radius: var(--bs-border-radius);
