@@ -5,12 +5,16 @@
       --offwhite: #cad2c1;
       --main-font:'Barlow', 'Akkurat', 'Inter', sans-serif;
       --header:'Unica One', sans-serif;
-      --gradient: linear-gradient(to left, #0b51b1, #a090b4 100%);
+      --gradient: linear-gradient(to left, #79273d, #505789 100%);
+      --gradient-light: linear-gradient(to left, #8a6680, #5e7ea9 100%);
       /* --bs-body-bg: rgb(33, 37, 41, 0.85); */
       --bs-border-radius: 1rem;
-      --bounceani: 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55) all
+      --bounceani: 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+      --bs-navbar-toggler-icon-bg: url(../images/menu-button-wide.svg/)
     }
     
+
+
 @font-face {
       font-family: Akkurat;
       src: url(../fonts/Akkurat.ttf);
@@ -49,6 +53,7 @@
 body {
       font-size: calc(20px+2vw);
       background-color: rgb(24, 28, 32);
+      overflow-x: hidden;
 }
 
 .bgnoise{
@@ -211,40 +216,9 @@ li.nav-item::after {
       transition: width 1s ease 0s, right 1s ease 0s;
 }
 
-.navbar-nav .nav-link.active{
-      transition: width 1s ease 0s, right 1s ease 0s;
-      font-weight: bold;
-      background-image: linear-gradient(to left, #749cd4, #9782af 100%);
-      background-size: cover;
-      background-clip: text;
-      color: transparent;
-}
-
 a.nav-link.active.dropdown-toggle::after{
       transition: width .5s ease 0s, right .5s ease 0s;
       color:#749cd4;
-}
-
-#navcontainer {
-      max-width:1400px;
-      padding:2vh 2vw;
-      margin:auto;
-      position:sticky;
-      top:0px;
-      z-index: 1000;
-}
-
-.navbar{
-      border-radius: var(--bs-border-radius);
-}
-
-.dropdown-menu[data-bs-popper]{
-      left:auto;
-      transition: 1.5s ease-in-out all;
-}
-
-button.navbar-toggler{
-      margin:auto;
 }
 
 span.badge{
@@ -271,8 +245,85 @@ h1 > div.carousel-indicators > button.active{
       transition: 0.5s ease-in-out;
 }
 
-a.dropdown-item.active, a.dropdown-item.focus, a.dropdown-item.target{
-      background: var(--gradient);
+/* -------------------------- 
+|    NAVBAR                 |
+---------------------------*/
+.navpos{
+      position: sticky;
+      z-index: 1000;
+      top: 3em;
+      left: 3em;
+      height: 3em;
+      width: 3em;
+      transition: .5s ease-in-out all;
+}
+
+.navpos:hover{
+      transform: scale(1.5);
+      transform-origin: center;
+      border-radius: 50%!important;
+}
+
+.navbar .container-fluid {
+      --bs-gutter-x: 0;
+      --bs-gutter-y: 0;
+}
+
+.navbar {
+      --bs-navbar-padding-x: 0;
+      --bs-navbar-padding-y: 0;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+}
+
+.navbar, .navbar li, .offcanvas-body{
+      max-width: fit-content;
+      outline: none;
+      box-shadow: none;
+}
+
+.navbar-toggler{
+      padding: 0;
+      line-height: normal;
+      border: none;
+}
+
+.navbar-toggler:focus, .navbar-toggler:active, .navbar-toggler-icon:focus {
+      outline: none;
+      box-shadow: none;
+}
+
+.navbar-nav .nav-link.active{
+      transition: width 1s ease 0s, right 1s ease 0s;
+      font-weight: bold;
+      background-image: var(--gradient-light);
+      background-size: cover;
+      background-clip: text;
+      color: transparent;
+}
+
+.navbar h5 img{
+      max-height: 50px;
+}
+
+.offcanvas{
+      height: fit-content;
+      max-height: 60vh;
+      width: fit-content;
+      max-width: 50vw;
+      top: 3em!important;
+      left: 3em!important;
+}
+
+#offcanvasNavbarLabel{
+      color: gray;
+      size: 12rem;
+}
+
+.offcanvas-body{
+      padding: 0;
 }
 
 /* -------------------------- 
@@ -340,7 +391,7 @@ a.dropdown-item.active, a.dropdown-item.focus, a.dropdown-item.target{
       border-radius: 0;
 }
 
-#title a{
+#title a, #title{
       font-family: 'Akira';
       color: var(--alabaster);
       font-weight: 600;
@@ -442,12 +493,6 @@ h2.ctitlew:hover span{
       background-size: cover;
 }
 
-/* #featuredproj {min-height: 100vh;} */
-
-#ftprjwrapper{
-      /* background-image: radial-gradient(circle, rgba(255, 0, 0, 0.363) 0%, rgb(15, 15, 15) 100%); */
-}
-
 #allprojects {min-height: 75vh;}
 
 #featuredproj .card{
@@ -455,40 +500,30 @@ h2.ctitlew:hover span{
       animation: fadein linear forwards;
       animation-timeline: view(15%);
       animation-range: entry;
-      transition: 1.5s ease-in-out all;
+      transition: .5s ease-in-out all;
       /* border-color: rgba(0,0,0,0);
       background-color: rgba(0,0,0,0); */
 }
 
-#allprojects{
-      mask: linear-gradient(90deg, transparent, white 30%, white 70%, transparent);
+#featuredproj .card:hover{
+      transform: scale(1.05);
+      transform-origin: right;
 }
 
-#allproj1 .card{
-      animation: screen linear forwards;
-      animation-timeline: view();
+#ftprjtxt1, #ftprjtxt2, #ftprjtxt3{
+      position: relative;
+      opacity: 0%;
+      transform: translateX(150px);
+      animation: slideinfrmleft linear forwards;
+      animation-timeline: view(35%);
+      animation-range: entry;
 }
 
-#allproj2 .card{
-      animation: screen linear forwards;
-      animation-timeline: view();
-      animation-direction: reverse;
+@keyframes slideinfrmleft{
+      100% {transform: translateX(0%); opacity: 100%;}
 }
 
-#allproj3 .card{
-      animation: screen linear forwards;
-      animation-timeline: view();
-}
 
-.c1{--speed: 1;}
-.c2{--speed: 2;}
-.c3{--speed: 3;}
-.c4{--speed: 4;}
-
-@keyframes screen{
-      from {transform: translate(calc(var(--speed)*-7vh));}
-      to {transform: translate(calc(var(--speed)*7vh));}
-}
 
 /* -------------------------- 
 |    EXPERIENCE             |

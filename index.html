@@ -125,42 +125,54 @@
     <!-- rest of page -->
     <div class="maincontent">
       <!-- navbar -->
-      <div id="navcontainer">
-        <nav id="navbar" class="navbar sticky-top bg-dark navbar-expand-xl bg-body-tertiary px-2" data-bs-theme="dark">
+      <div class="navpos bg-body-tertiary rounded">
+        <nav class="navbar">
           <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+              <span><i class="bi bi-menu-button-wide px-1"></i></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                <li class="nav-item px-5">
-                  <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-house-fill pe-2"></i> Home</a>
-                </li>
-                <li class="nav-item px-5">
-                  <a class="nav-link" href="#aboutme"><i class="bi bi-person-circle pe-2"></i> About Me</a>
-                </li>
-                <li class="nav-item px-5 dropdown dropdown-center">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-code-square pe-2"></i> Projects
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#projects">Featured Project</a></li>
-                    <li><a class="dropdown-item disabled" href="#Project2">Upcoming</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#allprojects">All Projects</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item px-5">
-                  <a class="nav-link" href="#experience"><i class="bi bi-pencil-square pe-2"></i> Experience</a>
-                </li>
-                <li class="nav-item px-5">
-                  <a class="nav-link" href="#contactme"><i class="bi bi-chat-square-dots-fill pe-2"></i> Contact Me</a>
-                </li>
-              </ul>
+            <div class="offcanvas offcanvas-start rounded p-3" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+              <div class="offcanvas-header container">
+                <div class="col-8">
+                  <p class="offcanvas-title px-5" id="offcanvasNavbarLabel">MENU</p>
+                </div>
+                <div class="col-4">
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item py-2 px-5">
+                    <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-house-fill pe-2"></i> Home</a>
+                  </li>
+                  <li class="nav-item py-2 px-5">
+                    <a class="nav-link" href="#aboutme"><i class="bi bi-person-circle pe-2"></i> About Me</a>
+                  </li>
+                  <li class="nav-item py-2 px-5 dropdown dropdown-center">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="bi bi-code-square pe-2"></i> Projects
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#projects">Featured Project</a></li>
+                      <li><a class="dropdown-item disabled" href="#Project2">Upcoming</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#allprojects">All Projects</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item py-2 px-5">
+                    <a class="nav-link" href="#experience"><i class="bi bi-pencil-square pe-2"></i> Experience</a>
+                  </li>
+                  <li class="nav-item py-2 px-5">
+                    <a class="nav-link" href="#contactme"><i class="bi bi-chat-square-dots-fill pe-2"></i> Contact Me</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </nav>
       </div>
+
+
       <!-- about me section -->
       <section class="pgsect user-select-none py-3 min-vh-75" id="aboutme">
         <div class="container-fluid" id="abme">
@@ -231,21 +243,16 @@
       <section class="pgsect user-select-none" id="projects">
         <!--featured project section-->
         <div class="container-fluid" id="featuredproj">
-
           <div class="row mw-100 mx-auto py-5 rounded align-items-center" id="ftprjwrapper">
-          
             <div class="d-none d-xxl-block col-xxl-1"></div>
-
             <div class="col-12 col-xxl-3">
                 <h1 class="text-align-center">Featured Project</h1>
                 <div class="border-bottom col-12 col-lg-8 my-4 mx-auto"></div>
             </div>
-
             <div class="d-none d-xxl-block col-xxl-2"></div>
-            
             <div class="col-12 col-xxl-5">
               <div class="row align-items-center">
-                <div class="col-sm-12 col-md-6">
+                <div class="col-sm-12 col-md-6" id="ftprojcards">
                   <div class="card mb-3">
                     <div class="row align-items-center g-0">
                       <div class="col-10">
@@ -284,9 +291,9 @@
                   </div>
                 </div>
                 <div class="col-sm-12 col-md-6">
-                  <div class="row no-wrap justify-content-center">
-                  <h3 class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, vero, nulla voluptates totam rerum sint in doloremque saepe et minus ipsum optio reiciendis distinctio? Amet architecto sapiente eum quod optio.</h3>
-                  <div class="d-flex flex-wrap justify-content-center align-items-center my-3">
+                  <div class="row no-wrap">
+                  <h3 class="my-3" id="ftprjtxt1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, vero, nulla voluptates totam rerum sint in doloremque saepe et minus ipsum optio reiciendis distinctio? Amet architecto sapiente eum quod optio.</h3>
+                  <div class="d-flex flex-wrap justify-content-start align-items-center my-3" id="ftprjtxt2">
                     <img class="m-1" alt="HTML5 Static Badge" src="https://img.shields.io/badge/HTML-white?logo=html5&logoColor=%23E34F26">
                     <img class="m-1" alt="CSS3 Static Badge" src="https://img.shields.io/badge/CSS-white?logo=CSS3&logoColor=%231572B6">
                     <!-- <img class="m-1" alt="JS Static Badge" src="https://img.shields.io/badge/JavaScript-white?logo=javascript&logoColor=%23F7DF1E"> -->
@@ -298,147 +305,27 @@
                     <img class="m-1" alt="Git Static Badge" src="https://img.shields.io/badge/Git-white?logo=git&logoColor=%23F05032">
                     <img class="m-1" alt="GitHub Static Badge" src="https://img.shields.io/badge/GitHub-white?logo=github&logoColor=%23181717">
                   </div>
-                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat possimus iure velit obcaecati, magnam rem numquam labore voluptatibus fugiat nostrum ratione quam amet voluptas quia unde sapiente cupiditate vero eos.</p>
+                  <p class="my-3" id="ftprjtxt3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat possimus iure velit obcaecati, magnam rem numquam labore voluptatibus fugiat nostrum ratione quam amet voluptas quia unde sapiente cupiditate vero eos.</p>
                 </div>         
                 </div>
               </div>
             </div>
-          
             <div class="d-none d-xxl-block col-xxl-1"></div>
-
           </div>
-
         </div>
         
           <!--all projects section-->
         <div class="container-fluid text-center" id="allprojects">
           <h1 class="col-sm-12 mb-6 mb-sm-0 justify-content-center text-align-center" >All Projects</h1>
           <div class="border-bottom col-sm-12 col-lg-8 my-4 mx-auto"></div>
+            <div class="container text-center">
+              
+              <a href="./images/menu-button-wide.svg"></a>
 
-          <div class="container text-center">
-            
-            <div class="row align-items-center" id="allproj1">
-              <div class="col-lg-3 col-md-12 c1">
-                <div class="card m-2 p-1">
-                  <div class="card-header p-1">[DATE]</div>
-                  <img src="https://placehold.co/600x400/EEE/31343C" class="card-img-top p-1" alt="...">
-                  <div class="card-body p-1">
-                    <h5 class="card-title">Project title</h5>
-                    <a href="#" target="_blank" class="btn btn-small btn-dark"><i class="bi bi-arrow-up-right-square"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-12 c2">
-                <div class="card m-2 p-1">
-                  <div class="card-header p-1">[DATE]</div>
-                  <img src="https://placehold.co/600x400/EEE/31343C" class="card-img-top p-1" alt="...">
-                  <div class="card-body p-1">
-                    <h5 class="card-title">Project title</h5>
-                    <a href="#" target="_blank" class="btn btn-small btn-dark"><i class="bi bi-arrow-up-right-square"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-12 c3">
-                <div class="card m-2 p-1">
-                  <div class="card-header p-1">[DATE]</div>
-                  <img src="https://placehold.co/600x400/EEE/31343C" class="card-img-top p-1" alt="...">
-                  <div class="card-body p-1">
-                    <h5 class="card-title">Project title</h5>
-                    <a href="#" target="_blank" class="btn btn-small btn-dark"><i class="bi bi-arrow-up-right-square"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-12 c4">
-                <div class="card m-2 p-1">
-                  <div class="card-header p-1">[DATE]</div>
-                  <img src="https://placehold.co/600x400/EEE/31343C" class="card-img-top p-1" alt="...">
-                  <div class="card-body p-1">
-                    <h5 class="card-title">Project title</h5>
-                    <a href="#" target="_blank" class="btn btn-small btn-dark"><i class="bi bi-arrow-up-right-square"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row align-items-center" id="allproj2">
-              <div class="col-lg-4 col-md-12 c3">
-                <div class="card m-2 p-1">
-                  <div class="card-header p-1">[DATE]</div>
-                  <img src="https://placehold.co/600x400/EEE/31343C" class="card-img-top p-1" alt="...">
-                  <div class="card-body p-1">
-                    <h5 class="card-title">Project title</h5>
-                    <a href="#" target="_blank" class="btn btn-small btn-dark"><i class="bi bi-arrow-up-right-square"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-12 c2">
-                <div class="card m-2 p-1">
-                  <div class="card-header p-1">[DATE]</div>
-                  <img src="https://placehold.co/600x400/EEE/31343C" class="card-img-top p-1" alt="...">
-                  <div class="card-body p-1">
-                    <h5 class="card-title">Project title</h5>
-                    <a href="#" target="_blank" class="btn btn-small btn-dark"><i class="bi bi-arrow-up-right-square"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-12 c1">
-                <div class="card m-2 p-1">
-                  <div class="card-header p-1">[DATE]</div>
-                  <img src="https://placehold.co/600x400/EEE/31343C" class="card-img-top p-1" alt="...">
-                  <div class="card-body p-1">
-                    <h5 class="card-title">Project title</h5>
-                    <a href="#" target="_blank" class="btn btn-small btn-dark"><i class="bi bi-arrow-up-right-square"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="row align-items-center" id="allproj3">
-              <div class="col-lg-3 col-md-12 c1">
-                <div class="card m-2 p-1">
-                  <div class="card-header p-1">[DATE]</div>
-                  <img src="https://placehold.co/600x400/EEE/31343C" class="card-img-top p-1" alt="...">
-                  <div class="card-body p-1">
-                    <h5 class="card-title">Project title</h5>
-                    <a href="#" target="_blank" class="btn btn-small btn-dark"><i class="bi bi-arrow-up-right-square"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-12 c2">
-                <div class="card m-2 p-1">
-                  <div class="card-header p-1">[DATE]</div>
-                  <img src="https://placehold.co/600x400/EEE/31343C" class="card-img-top p-1" alt="...">
-                  <div class="card-body p-1">
-                    <h5 class="card-title">Project title</h5>
-                    <a href="#" target="_blank" class="btn btn-small btn-dark"><i class="bi bi-arrow-up-right-square"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-12 c3">
-                <div class="card m-2 p-1">
-                  <div class="card-header p-1">[DATE]</div>
-                  <img src="https://placehold.co/600x400/EEE/31343C" class="card-img-top p-1" alt="...">
-                  <div class="card-body p-1">
-                    <h5 class="card-title">Project title</h5>
-                    <a href="#" target="_blank" class="btn btn-small btn-dark"><i class="bi bi-arrow-up-right-square"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-12 c4">
-                <div class="card m-2 p-1">
-                  <div class="card-header p-1">[DATE]</div>
-                  <img src="https://placehold.co/600x400/EEE/31343C" class="card-img-top p-1" alt="...">
-                  <div class="card-body p-1">
-                    <h5 class="card-title">Project title</h5>
-                    <a href="#" target="_blank" class="btn btn-small btn-dark"><i class="bi bi-arrow-up-right-square"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+            </div>        
           </div>
-        </div>
       </section>
+
       <!-- experience section -->
       <section class="pgsect user-select-none" id="experience">
         <div class="pgsect user-select-none py-3">
