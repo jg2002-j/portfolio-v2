@@ -15,9 +15,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Inter:wght@400;500;600&family=Manrope:wght@400;700&family=Roboto+Mono&family=Schibsted+Grotesk:wght@600&family=Unica+One&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400&f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet">
   </head>
 
-  <body class="user-select-none" data-bs-spy="scroll" data-bs-target="#home">
+  <body class="user-select-none" data-bs-spy="scroll" data-bs-target="#scrollspynavbar">
     <!-- bg noise -->
     <img src="../images/nnnoise.svg" alt="background noise" class="bgnoise">
 
@@ -85,7 +86,7 @@
       <div id="heronavlinks" class="row h12 mx-auto px-0 ">
         <div class="d-none d-lg-block col-lg-3 border-secondary py-5"></div>
         <div class="d-none d-lg-block col-lg-3 border-start border-end border-secondary py-5"></div>
-        <div class="col-sm-12 col-lg-3 d-flex px-2 py-5 justify-content-evenly align-self-center">
+        <div class="col-12 col-lg-3 d-flex px-2 py-5 justify-content-evenly align-self-center">
           <i class="bi bi-house-fill" data-bs-toggle="modal" data-bs-target="#alreadyhere"></i>
           <a href="#aboutme"><i class="bi bi-person-circle"></i></a>
           <a href="#projects"><i class="bi bi-code-square"></i></a>
@@ -105,7 +106,7 @@
         <div class="col d-none d-lg-block ps-5">
           <div class="" id="title"><a href="https://checkboxrace.com/" target="_blank">Jai Gandhi</a></div>
         </div>
-        <div class="d-block d-lg-none col-sm-12 p-5 text-center justify-content-center" id="title">JG</div>
+        <div class="d-block d-lg-none col-12 p-5 text-center justify-content-center" id="title">JG</div>
       </div>
       <div id="hero2bottom" class="row h12 mx-auto px-0">
         <div class="d-none d-lg-block col-lg-3 border-end border-secondary py-5"></div>
@@ -127,35 +128,36 @@
 
     </div>
 
-    <!-- <div class="navpos bg-body-tertiary rounded">
-      <nav class="navbar">
+    <div class="navpos bg-body-tertiary rounded d-flex align-items-center justify-content-center">
+      <nav class="navbar" id="scrollspynavbar">
         <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span><i class="bi bi-menu-button-wide px-1"></i></span>
           </button>
           <div class="offcanvas offcanvas-start rounded p-3" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <!-- offcanvas offcanvas-start rounded p-3 show -->
             <div class="offcanvas-header container">
-              <div class="col-8">
+              <div class="col-10">
                 <p class="offcanvas-title px-5" id="offcanvasNavbarLabel">MENU</p>
               </div>
-              <div class="col-4">
-                <button type="button" class="btn btn-dark btn-sm" data-bs-dismiss="offcanvas" aria-label="Close"><span class="material-symbols-rounded">close_fullscreen</span></button>
-              </div>
+              <button type="button" class="col-2 btn btn-dark btn-sm py-0 rounded-pill" data-bs-dismiss="offcanvas" aria-label="Close"><span class="material-symbols-rounded">close_fullscreen</span></button>
             </div>
             <div class="offcanvas-body">
+              
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item py-2 px-5">
-                  <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-house-fill pe-2"></i> Home</a>
+                  <a class="nav-link" aria-current="page" href="#"><i class="bi bi-house-fill pe-2"></i> Home</a>
                 </li>
                 <li class="nav-item py-2 px-5">
                   <a class="nav-link" href="#aboutme"><i class="bi bi-person-circle pe-2"></i> About Me</a>
                 </li>
-                <li class="nav-item py-2 px-5 dropdown dropdown-center">
+                <li class="nav-item py-2 px-5 dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-code-square pe-2"></i> Projects
                   </a>
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#projects">Featured Project</a></li>
+                    <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item disabled" href="#Project2">Upcoming</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="#allprojects">All Projects</a></li>
@@ -168,11 +170,12 @@
                   <a class="nav-link" href="#contactme"><i class="bi bi-chat-square-dots-fill pe-2"></i> Contact Me</a>
                 </li>
               </ul>
+
             </div>
           </div>
         </div>
       </nav>
-    </div> -->
+    </div>
     
     <!-- about me section -->
     <section class="pgsect user-select-none py-3 min-vh-75" id="aboutme">
@@ -253,7 +256,7 @@
           <div class="d-none d-xxl-block col-xxl-2"></div>
           <div class="col-12 col-xxl-5">
             <div class="row align-items-center">
-              <div class="col-sm-12 col-md-6" id="ftprojcards">
+              <div class="col-12 col-md-6" id="ftprojcards">
                 <div class="card mb-3">
                   <div class="row align-items-center g-0">
                     <div class="col-10">
@@ -291,7 +294,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-sm-12 col-md-6">
+              <div class="col-12 col-md-6">
                 <div class="row no-wrap">
                 <h3 class="my-3" id="ftprjtxt1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, vero, nulla voluptates totam rerum sint in doloremque saepe et minus ipsum optio reiciendis distinctio? Amet architecto sapiente eum quod optio.</h3>
                 <div class="d-flex flex-wrap justify-content-start align-items-center my-3" id="ftprjtxt2">
@@ -317,13 +320,112 @@
       
         <!--all projects section-->
       <div class="container-fluid text-center" id="allprojects">
-        <h1 class="col-sm-12 mb-6 mb-sm-0 justify-content-center text-align-center" >All Projects</h1>
-        <div class="border-bottom col-sm-12 col-lg-8 my-4 mx-auto"></div>
-          <div class="container text-center">
-            
-            <a href="./images/menu-button-wide.svg"></a>
-
-          </div>        
+        <h1 class="col-12 mb-6 mb-sm-0 justify-content-center text-align-center" >All Projects</h1>
+        <div class="border-bottom col-12 col-lg-8 my-4 mx-auto"></div>
+          <div class="container-fluid col-12 col-lg-8">
+            <div class="row d-flex justify-content-start align-items-end">
+              <div class="col-12 col-lg-7 p-3">
+                <div class="card">
+                  <img src="https://placehold.co/600x400@3x.png" class="card-img" alt="...">
+                </div>
+              </div>
+              <div class="col-12 col-lg-3 p-3">
+                <div class="card my-3 text-start">
+                  <div class="card-body">
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod excepturi asperiores odio recusandae earum, facilis ab sint corporis amet illo dolor, illum laudantium exercitationem. Obcaecati dignissimos fugit vitae minus ratione.</p>
+                  </div>
+                </div>
+                <div class="card" id="clickme">
+                  <div class="card-body">
+                    <a href="#" target="_blank" class="stretched-link"><i class="bi bi-arrow-up-right-square"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-lg-4">
+                <div class="row d-flex align-items-end">
+                  <div class="col-8 p-3">
+                    <div class="card">
+                      <img src="https://placehold.co/600x400@3x.png" class="card-img" alt="...">
+                    </div>
+                  </div>
+                  <div class="col-4 p-3">
+                    <div class="card my-3 text-start">
+                      <div class="card-body">
+                        <p class="card-text">project details</p>
+                      </div>
+                    </div>
+                    <div class="card" id="clickme">
+                      <div class="card-body">
+                        <a href="#" target="_blank" class="stretched-link"><i class="bi bi-arrow-up-right-square"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row h-25"></div>
+                <div class="row d-flex align-items-end">
+                  <div class="col-4 p-3">
+                    <div class="card my-3 text-start">
+                      <div class="card-body">
+                        <p class="card-text">project details</p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-body" id="clickme">
+                        <a href="#" target="_blank" class="stretched-link"><i class="bi bi-arrow-up-right-square"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-8 p-3">
+                    <div class="card">
+                      <img src="https://placehold.co/600x400@3x.png" class="card-img" alt="...">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-8">
+                <div class="row d-flex justify-content-end align-items-end">
+                  <div class="col-sm-10 col-lg-4 p-3">
+                    <div class="card my-3 text-end">
+                      <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi odio officiis neque quidem, aperiam, ipsam, expedita adipisci assumenda numquam minima aliquid repellendus obcaecati? Adipisci mollitia dolor corrupti libero minima qui!</p>
+                      </div>
+                    </div>
+                    <div class="card" id="clickme">
+                      <div class="card-body">
+                        <a href="#" target="_blank" class="stretched-link"><i class="bi bi-arrow-up-right-square"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-10 col-lg-6 p-3">
+                    <div class="card">
+                      <img src="https://placehold.co/600x400@3x.png" class="card-img" alt="...">
+                    </div>
+                  </div>
+                </div>
+                <div class="row d-flex justify-content-start align-items-end">
+                  <div class="col-12 col-lg-8 p-3">
+                    <div class="card">
+                      <img src="https://placehold.co/600x400@3x.png" class="card-img" alt="...">
+                    </div>
+                  </div>
+                  <div class="sm-12 col-lg-3 p-3">
+                    <div class="card my-3 text-start">
+                      <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod excepturi asperiores odio recusandae earum, facilis ab sint corporis amet illo dolor, illum laudantium exercitationem. Obcaecati dignissimos fugit vitae minus ratione.</p>
+                      </div>
+                    </div>
+                    <div class="card" id="clickme">
+                      <div class="card-body">
+                        <a href="#" target="_blank" class="stretched-link"><i class="bi bi-arrow-up-right-square"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
         </div>
     </section>
 
