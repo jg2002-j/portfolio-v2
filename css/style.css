@@ -3,13 +3,18 @@
       --cardinal-red:#B03043;
       --alabaster:#E0E2DB;
       --offwhite: #cad2c1;
-      --main-font:'Barlow', 'Akkurat', 'Inter', sans-serif;
+      --main-font: 'Cabinet Grotesk', 'Akkurat', 'Inter', sans-serif;
       --header:'Unica One', sans-serif;
-      --gradient: linear-gradient(to left, #0b51b1, #a090b4 100%);
+      --gradient: linear-gradient(to left, #79273d, #505789 100%);
+      --gradient-light: linear-gradient(to left, #e3978a, #5eb1d4 100%);
       /* --bs-body-bg: rgb(33, 37, 41, 0.85); */
       --bs-border-radius: 1rem;
+      --bounceani: 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+      --bs-navbar-toggler-icon-bg: url(../images/menu-button-wide.svg/)
     }
     
+
+
 @font-face {
       font-family: Akkurat;
       src: url(../fonts/Akkurat.ttf);
@@ -20,10 +25,15 @@
       src: url(../fonts/Bantayog-Regular.otf);
 }
 
+@font-face {
+      font-family: Akira;
+      src: url(../fonts/Akira.otf);
+}
+
 @keyframes navlinks {
       from {letter-spacing: normal;}
       to {letter-spacing: 2px; }
-    }
+}
 
 @keyframes hoverimg {
       from {border-radius: 0px;}
@@ -43,6 +53,7 @@
 body {
       font-size: calc(20px+2vw);
       background-color: rgb(24, 28, 32);
+      overflow-x: hidden;
 }
 
 .bgnoise{
@@ -57,7 +68,7 @@ body {
       background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
       background-repeat: repeat;
       animation: bg-animation .5s infinite;
-      opacity: .65;
+      opacity: 0.4;
       visibility: visible;
 }
 
@@ -79,7 +90,8 @@ body {
       min-height: 100vh;
       border-radius: var(--bs-border-radius);
       margin: 2vh 0;
-      overflow-x: hidden;
+      /* overflow-x: hidden; */
+      /* THIS LINE BREAKS ANIMATIONS IDK WHY */
 }
 
 #abme, #featuredproj, #allprojects, #experience{
@@ -93,6 +105,7 @@ a {
 
 h1.modal-title{
       font-family: 'Barlow', sans-serif;
+      letter-spacing: normal;
 }
 
 #location{
@@ -115,12 +128,18 @@ h1.modal-title{
 ---------------------------*/
 
 /* 
-font-family: 'Barlow', sans-serif;
-font-family: 'Inter', sans-serif;
-font-family: 'Manrope', sans-serif;
-font-family: 'Roboto Mono', monospace;
-font-family: 'Schibsted Grotesk', sans-serif;
-font-family: 'Unica One', sans-serif;
+font-family: 'Barlow';
+font-family: 'Inter';
+font-family: 'Manrope';
+font-family: 'Roboto Mono';
+font-family: 'Schibsted Grotesk';
+font-family: 'Unica One';
+font-family: 'Akira';
+font-family: 'Akkurat';
+font-family: 'Bantayog';
+font-family: 'Cabinet Grotesk';
+font-family: 'Satoshi';
+
 */
 
 h1 {
@@ -165,11 +184,25 @@ h1 {
 |    BOOTSTRAP OVERRIDES    |
 ---------------------------*/
 
-li.nav-item:hover::after {
-      transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+/* .card{
+      opacity: 0%;
+      animation: fadein linear forwards;
+      animation-timeline: view(20%);
+      animation-range: entry;
+      transition: .5s ease-in-out all;
+      border-color: rgba(0,0,0,0);
+      background-color: rgba(0,0,0,0);
+}
+.card:hover {
+      background-color:  var(--bs-body-bg);
+      box-shadow: 0px 0px 0px 2.5px rgba(59, 65, 82, 0.849);
+} */
+
+/* li.nav-item:hover::after {
+      transition: var(--bounceani);
       width: 110%;
       left: 50%;
-    }
+}
 
 li.nav-item::after {
       content: "";
@@ -182,44 +215,13 @@ li.nav-item::after {
       left: 50%;
       bottom: 2%;
       transform: translateX(-50%);
-      transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+      transition: var(--bounceani);
       transition: width 1s ease 0s, right 1s ease 0s;
-}
-
-.navbar-nav .nav-link.active{
-      transition: width 1s ease 0s, right 1s ease 0s;
-      font-weight: bold;
-      background-image: linear-gradient(to left, #749cd4, #9782af 100%);
-      background-size: cover;
-      background-clip: text;
-      color: transparent;
-}
+} */
 
 a.nav-link.active.dropdown-toggle::after{
       transition: width .5s ease 0s, right .5s ease 0s;
       color:#749cd4;
-}
-
-#navcontainer {
-      max-width:1400px;
-      padding:2vh 2vw;
-      margin:auto;
-      position:sticky;
-      top:0px;
-      z-index: 1000;
-}
-
-.navbar{
-      border-radius: var(--bs-border-radius);
-}
-
-.dropdown-menu[data-bs-popper]{
-      left:auto;
-      transition: 1.5s ease-in-out all;
-}
-
-button.navbar-toggler{
-      margin:auto;
 }
 
 span.badge{
@@ -246,7 +248,127 @@ h1 > div.carousel-indicators > button.active{
       transition: 0.5s ease-in-out;
 }
 
-a.dropdown-item.active, a.dropdown-item.focus, a.dropdown-item.target{
+/* -------------------------- 
+|    NAVBAR                 |
+---------------------------*/
+
+.navpos{
+      position: sticky;
+      outline: none;
+      box-shadow: none;
+      z-index: 1000;
+      top: 3rem;
+      left: 3rem;
+      height: 3em;
+      width: 3em;
+      --bs-gutter-x: 0;
+      --bs-gutter-y: 0;
+}
+
+.navbar {
+      --bs-navbar-padding-x: 0;
+      --bs-navbar-padding-y: 0;
+      outline: none;
+      box-shadow: none;
+      max-width: fit-content;
+      position: relative;
+      margin: auto;
+      transition: .5s ease-in-out all;
+}
+
+.navbar .material-symbols-rounded {
+      font-family: 'Material Symbols Rounded';
+      font-weight: 350;
+      font-style: normal;
+      font-size: 20px;
+      line-height: normal;
+      padding: .75px;
+}
+
+.nav-link{
+      max-width: fit-content;
+}
+
+.navbar-nav *{
+      font-family: 'Akira';
+      /* letter-spacing: 0.5px; */
+      --bs-nav-link-font-size: 1.5rem;
+      --bs-nav-link-font-weight: 450;
+      --bs-nav-link-color: none;
+      --bs-nav-link-hover-color: none;
+}
+
+.navbar-toggler{
+      padding: 0;
+      line-height: normal;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      transition: .5s ease-in-out all;
+}
+
+.navbar-toggler:focus, .navbar-toggler:active, .navbar-toggler-icon:focus, .navbar .container-fluid:focus, .navbar .container-fluid:active{
+      outline: none;
+      box-shadow: none;
+}
+
+.navbar-nav .nav-link.active, .nav-link:hover{
+      transition: width 1s ease 0s, right 1s ease 0s;
+      background-image: var(--gradient-light);
+      background-size: cover;
+      background-clip: text;
+      color: transparent;
+}
+
+.dropdown-menu *{
+      transition: width 1s ease 0s, right 1s ease 0s;
+      --bs-dropdown-zindex: 1000;
+      --bs-dropdown-min-width: 10rem;
+      --bs-dropdown-padding-x: 0;
+      --bs-dropdown-padding-y: 0.75rem;
+      --bs-dropdown-spacer: 0.125rem;
+      --bs-dropdown-font-size: 1rem;
+}
+
+a.nav-link.dropdown-toggle.show:hover{
+      --bs-body-color: #dee2e6;
+}
+
+.dropdown-menu .dropdown-item:hover{
+      transition: width 1s ease 0s, right 1s ease 0s;
+      background-image: var(--gradient-light);
+      background-size: cover;
+      background-clip: text;
+      color: transparent;
+}
+
+.offcanvas{
+      height: fit-content;
+      /* max-height: 60vh; */
+      width: fit-content;
+      max-width: 50vw;
+      top: 3em!important;
+      left: 3em!important;
+      border-right: none!important;
+}
+
+#offcanvasNavbarLabel, .offcanvas button{
+      color: gray;
+      size: 12rem;
+}
+
+.offcanvas-body{
+      padding: 0;
+}
+
+.offcanvas-backdrop {
+      /* display: none; */
+      position: absolute;
+      top: -3em;
+      left: -3em;
+      z-index: 1040;
+      width: 100vw;
+      height: 100vhh;
       background: var(--gradient);
 }
 
@@ -275,10 +397,10 @@ a.dropdown-item.active, a.dropdown-item.focus, a.dropdown-item.target{
 }
 
 #heronavlinks a:hover::after, #heronavlinks i.bi-house-fill:hover::after{
-      transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+      transition: var(--bounceani);
       width: 70%;
       left: 50%;
-    }
+}
 
 #heronavlinks a::after, #heronavlinks i.bi-house-fill::after{
       content: "";
@@ -291,7 +413,7 @@ a.dropdown-item.active, a.dropdown-item.focus, a.dropdown-item.target{
       left: 50%;
       bottom: -5%;
       transform: translateX(-50%);
-      transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+      transition: var(--bounceani);
       transition: width 1s ease 0s, right 1s ease 0s;
 }
 
@@ -315,29 +437,19 @@ a.dropdown-item.active, a.dropdown-item.focus, a.dropdown-item.target{
       border-radius: 0;
 }
 
-#title a{
-      font-family: 'Manrope';
+#title a, #title{
+      font-family: 'Akira';
       color: var(--alabaster);
       font-weight: 600;
-      font-size: calc(30px + 10.5vw);
+      font-size: calc(30px + 7.5vw);
       letter-spacing: 15px;
       mix-blend-mode: difference;
       animation: a_title linear forwards;
       animation-timeline: view();
-      animation-range: exit -100px;
+      animation-range: exit;
       transition: 1.5s ease-in-out all;
       text-wrap: nowrap;
       overflow: hidden;
-}
-
-#title{
-      font-family: 'Manrope';
-      color: var(--alabaster);
-      font-weight: 600;
-      font-size: calc(30px + 10.5vw);
-      letter-spacing: 15px;
-      mix-blend-mode: difference;
-      transition: 1.5s ease-in-out all;
 }
 
 #title a:hover{
@@ -382,10 +494,40 @@ a.dropdown-item.active, a.dropdown-item.focus, a.dropdown-item.target{
 #aboutme .card{
       opacity: 0%;
       animation: fadein linear forwards;
-      animation-timeline: view(15%);
+      animation-timeline: view(20%);
       animation-range: entry;
-      transition: 1.5s ease-in-out all;
+      transition: .5s ease-in-out all;
+
+      border-color: rgba(0,0,0,0);
+      background-color: rgba(0,0,0,0);
 }
+
+#aboutme .card:hover {
+      background-color:  var(--bs-body-bg);
+      box-shadow: 0px 0px 0px 2.5px rgba(59, 65, 82, 0.849);
+}
+
+#skillbadge{transition: .5s ease-out all;}
+#skillbadge:hover{
+      transform: scale(1.5);
+}
+
+h2.ctitlew{font-size: 32px;}
+h2.ctitlew:hover span{
+      font-size: 32px;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      transition: 2s ease all;
+      animation: bounce 1.25s ease infinite;
+      animation-delay: calc(0.1s*var(--d));
+}
+
+@keyframes bounce{
+      0% {transform: translateY(0px);}
+      20%{transform: translateY(-5px);}
+      60%,100%{transform: translateY(0px);} 
+}   
 
 /* -------------------------- 
 |    PROJECTS               |
@@ -397,54 +539,37 @@ a.dropdown-item.active, a.dropdown-item.focus, a.dropdown-item.target{
       background-size: cover;
 }
 
-#featuredproj {min-height: 75vh;}
-
-#ftprjwrapper{
-      background: url(../images/codioful-formerly-gradienta-t-Rt42Wl1RQ-unsplash.jpg);
-      background-size: cover;
-      background-repeat: no-repeat;
-      border-radius: var(--bs-border-radius);
-}
-
 #allprojects {min-height: 75vh;}
 
 #featuredproj .card{
       opacity: 0%;
       animation: fadein linear forwards;
-      animation-timeline: view(15%);
+      animation-timeline: view(20%);
       animation-range: entry;
-      transition: 1.5s ease-in-out all;
+      transition: .5s ease-in-out all;
+      /* border-color: rgba(0,0,0,0);
+      background-color: rgba(0,0,0,0); */
 }
 
-#allprojects{
-      mask: linear-gradient(90deg, transparent, white 30%, white 70%, transparent);
+#featuredproj .card:hover{
+      transform: scale(1.05);
+      transform-origin: right;
 }
 
-#allproj1 .card{
-      animation: screen linear forwards;
-      animation-timeline: view();
+#ftprjtxt1, #ftprjtxt2, #ftprjtxt3{
+      position: relative;
+      opacity: 0%;
+      transform: translateX(150px);
+      animation: slideinfrmleft linear forwards;
+      animation-timeline: view(20%);
+      animation-range: entry;
 }
 
-#allproj2 .card{
-      animation: screen linear forwards;
-      animation-timeline: view();
-      animation-direction: reverse;
+@keyframes slideinfrmleft{
+      100% {transform: translateX(0%); opacity: 100%;}
 }
 
-#allproj3 .card{
-      animation: screen linear forwards;
-      animation-timeline: view();
-}
 
-.c1{--speed: 1;}
-.c2{--speed: 2;}
-.c3{--speed: 3;}
-.c4{--speed: 4;}
-
-@keyframes screen{
-      from {transform: translate(calc(var(--speed)*-7vh));}
-      to {transform: translate(calc(var(--speed)*7vh));}
-}
 
 /* -------------------------- 
 |    EXPERIENCE             |
